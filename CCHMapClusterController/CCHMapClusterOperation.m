@@ -145,8 +145,8 @@
                     // Check if an existing cluster annotation can be reused
                     annotationForCell = CCHMapClusterControllerFindVisibleAnnotation(annotationSet, visibleAnnotationsInCell);
                     
-                    // For unique locations, coordinate has to match as well
-                    if (annotationForCell && annotationSetsAreUniqueLocations) {
+                    // Coordinate has to match as well
+                    if (annotationForCell) {
                         BOOL coordinateMatches = fequal(coordinate.latitude, annotationForCell.coordinate.latitude) && fequal(coordinate.longitude, annotationForCell.coordinate.longitude);
                         annotationForCell = coordinateMatches ? annotationForCell : nil;
                     }
